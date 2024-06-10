@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление финансами</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header>
+        <button onclick="openAddPurchaseForm()">Добавить покупку</button>
+        <button onclick="showPurchaseHistory()">История покупок</button>
+        <button onclick="showAnalytics()">Анализ расходов</button>
+    </header>
+
+    <div id="both" class="both"> 
+
+      <div id="addPurchaseForm" class="add">
+
+        <div class="inner">
+            <label for="productName">Название продукта:</label>
+            <input type="text" id="productName">   
+        </div>
+
+        <div class="inner">
+            <label for="productPrice">Цена продукта:</label>
+            <input type="text" id="productPrice">
+        </div>
+
+        <div class="inner">
+            <label for="productCategory">Категория продукта:</label>
+            <select id="productCategory">
+                <option value="Еда">Еда</option>
+                <option value="Одежда">Одежда</option>
+                <option value="Электроника">Электроника</option>
+                <option value="Бытовая химия">Бытовая химия</option>
+                <option value="Развлечения">Развлечения</option>
+            </select>  
+        </div>
+
+        <button class="saveBtn" onclick="addPurchase()">Cохранить</button>
+     </div>
+
+        <div id="purchaseHistory" class="history">
+            <h2 style="margin-left:22%;">История покупок</h2>
+            <ul id="purchaseList"></ul>
+        </div> 
+
+        <div id="analytics" class="analytics">
+            <h2 style="margin-left:22%;">Анализ расходов</h2>
+            <canvas id="pieChart" width="400" height="400"></canvas>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

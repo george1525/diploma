@@ -172,4 +172,6 @@ button.edit-button {
 button.edit-button:hover {
     background-image: url('img/edit2.png');
 }
-
+.checkIMG {
+    height:700px;
+}

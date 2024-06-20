@@ -2,6 +2,30 @@ document.getElementById('both').classList.add('hidden');
 // Переменная для хранения текущего индекса редактируемой покупки
 let currentEditIndex = null;
 
+function getQR() {
+    const encodedParams = new URLSearchParams();
+    encodedParams.append("qrurl", "file:///C:/Users/%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9/Desktop/%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0/check1.png");
+    encodedParams.append("token", "25740.utP6yiiuSBUhRoppn");
+    
+    const options = {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      body: encodedParams
+    };
+    
+    fetch('https://proverkacheka.com/api/v1/check/get', options)
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+        document.querySelector('.b-res').innerHTML=response.data.html;
+      })
+      .catch(err => console.error(err));
+}
+
+
+
 // Функция открытия формы добавления покупки
 function openAddPurchaseForm() {
     document.getElementById('both').style.display = 'block';

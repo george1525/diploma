@@ -4,7 +4,7 @@ let currentEditIndex = null;
 
 function getQR() {
     const encodedParams = new URLSearchParams();
-    encodedParams.append("qrurl", "file:///C:/Users/%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D0%B9/Desktop/%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0/check1.png");
+    encodedParams.append("qrurl", "https://george1525.github.io/diploma/check1.png");
     encodedParams.append("token", "25740.utP6yiiuSBUhRoppn");
     
     const options = {
